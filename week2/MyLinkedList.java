@@ -1,4 +1,5 @@
 package Week2;
+import java.util.Iterator; 
 
 public class MyLinkedList<T> implements MyList<T> {
     private class Node {
@@ -259,6 +260,25 @@ public class MyLinkedList<T> implements MyList<T> {
         }
         return slow;
     }
+    
+    public Iterator<T> iterator() {
+        return new MyIterator();
+    }
 
+    private class MyIterator implements Iterator<T>{
+        Node cursor = head;
+
+        @Override
+        public boolean hasNext() {
+            return cursor != null;
+        }
+
+        @Override
+        public T next(){
+            T data = (T) cursor.data;
+            cursor = cursor.next;
+            return data;
+        }
+    }
 
 }
