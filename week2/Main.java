@@ -25,38 +25,38 @@ public class Main {
         myList.add(1);
         myList.add(2);
         myList.add(3);
-        System.out.println(myList); // expected output: [1, 2, 3]
+        System.out.println(myList);
 
         // test add(int index) method
         myList.add(0, 0);
         myList.add(4, 4);
-        System.out.println(myList); // expected output: [0, 1, 2, 3, 4]
+        System.out.println(myList); 
 
         // test remove(int index) method
         myList.remove(0);
         myList.remove(3);
-        System.out.println(myList); // expected output: [1, 2, 3]
+        System.out.println(myList); 
 
         // test remove(Object o) method
         myList.remove(Integer.valueOf(2));
-        System.out.println(myList); // expected output: [1, 3]
+        System.out.println(myList); 
 
         // test get(int index) method
-        System.out.println(myList.get(0)); // expected output: 1
+        System.out.println(myList.get(0)); 
 
         // test indexOf(Object o) method
-        System.out.println(myList.indexOf(2)); // expected output: 1
+        System.out.println(myList.indexOf(2)); 
 
         // test lastIndexOf(Object o) method
         myList.add(2);
-        System.out.println(myList.lastIndexOf(2)); // expected output: 2
+        System.out.println(myList.lastIndexOf(2)); 
 
         // test contains(Object o) method
-        System.out.println(myList.contains(2)); // expected output: true
+        System.out.println(myList.contains(2)); 
 
         // test clear() method
         myList.clear();
-        System.out.println(myList); // expected output: []
+        System.out.println(myList);
     }
 
     private static void testLinkedList() {
@@ -66,38 +66,37 @@ public class Main {
         myList.add(1);
         myList.add(2);
         myList.add(3);
-        System.out.println(myList); // expected output: [1, 2, 3]
+        System.out.println(myList); 
 
         // test add(T element, int index) method
         myList.add(0, 0);
         myList.add(4, 4);
-        System.out.println(myList); // expected output: [0, 1, 2, 3, 4]
+        System.out.println(myList);
 
         // test remove(int index) method
         myList.remove(0);
         myList.remove(3);
-        System.out.println(myList); // expected output: [1, 2, 3]
+        System.out.println(myList);
 
         // test remove(Object o) method
         myList.remove(Integer.valueOf(2));
-        System.out.println(myList); // expected output: [1, 3]
+        System.out.println(myList); 
 
         // test get(int index) method
-        System.out.println(myList.get(0)); // expected output: 1
-
-
+        System.out.println(myList.get(0)); 
 
         // test indexOf(Object o) method
-        System.out.println(myList.indexOf(2)); // expected output: 1
-
+        System.out.println(myList.indexOf(2));
+        
         // test lastIndexOf(Object o) method
         myList.add(2);
-        System.out.println(myList.lastIndexOf(2)); // expected output: 2
+        System.out.println(myList.lastIndexOf(2)); 
 
         // test contains(Object o) method
-        System.out.println(myList.contains(2)); // expected output:
+        System.out.println(myList.contains(2)); 
+        
         // test clear() method
         myList.clear();
-        System.out.println(myList); // expected output: []
+        System.out.println(myList); 
     }
 }
