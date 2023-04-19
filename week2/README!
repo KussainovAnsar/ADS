@@ -1,1 +1,13 @@
+Methods used in the MyList interface which are implemented in ArrayList and LinkedList:
 
+int size(); //returns the number of elements in the list.
+boolean contains(Object o); //returns true if the list contains the specified element.
+void add(T item); //appends the specified element to the end of the list.
+void add(T item, int index); //inserts the specified element at the specified position in the list.
+boolean remove(T item); //removes the first occurrence of the specified element from the list, if it is present.
+T remove(int index); //removes the element at the specified position in the list.
+void clear(); //removes all of the elements from the list.
+T get(int index); //returns the element at the specified position in the list.
+int indexOf(Object o); //returns the index of the first occurrence of the specified element in the list, or -1 if it is not present.
+int lastIndexOf(Object o); //returns the index of the last occurrence of the specified element in the list, or -1 if it is not present.
+void sort(); //sorts the elements in the list in ascending order, according to their natural ordering.
