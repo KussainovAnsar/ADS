@@ -34,7 +34,9 @@ public abstract class MyArrayList<T> implements MyList<T> {
     public void add(T item) {   // Adds a specified item to the end of the list
         if (size == arrayElements.length) {    // If the array is full, increase its size
             Object[] newElements = new Object[2 * arrayElements.length];
-            System.arraycopy(arrayElements, 0, newElements, 0, arrayElements.length);
+             for (int i = 0; i < arrayElements.length; i++) {
+                newElements[i] = arrayElements[i];
+            }
             arrayElements = newElements;
         }
         arrayElements[size] = item;
@@ -48,10 +50,21 @@ public abstract class MyArrayList<T> implements MyList<T> {
         }
         if (size == arrayElements.length) {
             Object[] newElements = new Object[2 * arrayElements.length];
-            System.arraycopy(arrayElements, 0, newElements, 0, arrayElements.length);
+            for (int i = 0; i < index; i++) 
+            {
+                newElements[i] = arrayElements[i];
+            }
+            for (int i = size-1; i >= index; i--)
+            {
+                newElements[i+1] = arrayElements[i];
+            }
             arrayElements = newElements;
+        } else {
+            for (int i = size-1; i >= index; i--) 
+            {
+                arrayElements[i+1] = arrayElements[i];
+            }
         }
-        System.arraycopy(arrayElements, index, arrayElements, index + 1, size - index);
         arrayElements[index] = item;
         size++;
     }
@@ -73,7 +86,9 @@ public abstract class MyArrayList<T> implements MyList<T> {
             throw new IndexOutOfBoundsException();
         }
         T removed = (T) arrayElements[index];
-        System.arraycopy(arrayElements, index + 1, arrayElements, index, size - index - 1);
+        for (int i = index; i < size - 1; i++) {
+        arrayElements[i] = arrayElements[i + 1];
+        }
         size--;
         arrayElements[size] = null; // to avoid memory leaks
         return removed;
