@@ -1,5 +1,6 @@
 package Week2;
 import java.util.Arrays;
+import java.util.Iterator;
 
 public abstract class MyArrayList<T> implements MyList<T> {
 
@@ -122,6 +123,7 @@ public abstract class MyArrayList<T> implements MyList<T> {
     
     // method returns the index of the last occurrence of the specified element in the list, or -1 if the list does not contain the element.
     // it iterates through the list backwards and compares each element to the specified object using the equals() method.
+    
     @Override
     public int lastIndexOf(Object o) {
         for (int i = size - 1; i >= 0; i--) {
@@ -133,8 +135,31 @@ public abstract class MyArrayList<T> implements MyList<T> {
     }
     
     // method sorts the elements in the list in ascending order using the Arrays.sort() method. It only sorts the elements up to the current size of the list.
+    
     @Override
     public void sort() {
         Arrays.sort(arrayElements, 0, size);
+    }
+    
+     public void sort() {
+        Arrays.sort(arrayElements, 0, size);
+    }
+
+    public Iterator<T> iterator() {
+        return new MyIterator();
+    }
+
+    private class MyIterator implements Iterator<T> {
+        private int cursor;
+
+        @Override
+        public boolean hasNext() {
+            return cursor < size();
+        }
+
+        @Override
+        public T next() {
+            return get(cursor++);
+        }
     }
 }
