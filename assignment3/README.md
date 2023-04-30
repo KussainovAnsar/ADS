@@ -1,4 +1,3 @@
-
 Public Methods:
 
 MyHashTable(): Default constructor with default size 11.
